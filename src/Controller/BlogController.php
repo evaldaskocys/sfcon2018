@@ -101,7 +101,7 @@ class BlogController extends AbstractController
         $postRepo->add($this->redisPostRepository);
         $postRepo->add($this->getDoctrine()->getRepository('Post'));
 
-        $postRepo->getOneBySlug($postName);
+        $post = $postRepo->getOneBySlug($postName);
 
         // Symfony's 'dump()' function is an improved version of PHP's 'var_dump()' but
         // it's not available in the 'prod' environment to prevent leaking sensitive information.
